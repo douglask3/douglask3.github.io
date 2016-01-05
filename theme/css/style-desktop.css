@@ -19,6 +19,7 @@
 	{
 		font-size: 2.0em;
 	}
+
 	h2
 	{
 		font-size: 1.25em;
@@ -99,7 +100,7 @@
 			.is-post h2
 			{
 				padding:0.5em 0;
-				font-size: 2.5em;
+				font-size: 1.5em;
 				letter-spacing: -0.015em;
 			}
 			.is-post p {
