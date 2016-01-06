@@ -30,10 +30,10 @@
 	{
 		display: block;
 		height: 2px;
-		border: 2px;
+		border-bottom: 2px #ccc;
 		border-top: 1px solid #d52349;
 		padding: 0;
-		align: centre
+		align: centre;
 		width: 60%;
 	}
 
