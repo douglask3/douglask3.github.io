@@ -149,7 +149,6 @@
 			}
 			.box .image-thumb
 			{
-				position: relative;
 				width: 33px;
 			}
 
@@ -299,6 +298,7 @@
 
 		.image-thumb
 		{
+			display: block;
 			width: 3%;
 			margin: 0 0 2em 0;
 		}
