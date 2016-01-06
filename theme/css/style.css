@@ -17,6 +17,8 @@
 		box-sizing: border-box;
 	}
 
+	hr { background-color: red; height: 1px; border: 0; }
+
 	body
 	{
 		font-family: 'Source Sans Pro';
