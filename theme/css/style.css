@@ -30,7 +30,7 @@
 	{
 		display: block;
 		height: 2px;
-		border-bottom: 2px #ccc;
+		border-bottom: 2px solid #ccc;
 		border-top: 1px solid #d52349;
 		padding: 0;
 		align: centre;
