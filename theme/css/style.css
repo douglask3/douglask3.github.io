@@ -17,7 +17,7 @@
 		box-sizing: border-box;
 	}
 
-	hr { background-color: red; height: 1px; border: 0; }
+	hr { background-color: red; height: 2px; border: 1px; }
 
 	body
 	{
