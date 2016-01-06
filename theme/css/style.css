@@ -172,6 +172,11 @@
 				position: relative;
 				width: 100px;
 			}
+			.box .image-head
+			{
+				position: relative;
+				width: 400px;
+			}
 
 	/* Button */
 
@@ -318,6 +323,14 @@
 		}
 
 		.image-thumb
+		{
+			display: block;
+			width: 10%;
+			margin: 0 0 2em 0;
+			float: right;
+		}
+
+		.image-head
 		{
 			display: block;
 			width: 10%;
@@ -622,6 +635,10 @@
 			margin: 0;
 		}
 		#banner .image-thumb
+		{
+			margin: 0;
+		}
+		#banner .image-head
 		{
 			margin: 0;
 		}
