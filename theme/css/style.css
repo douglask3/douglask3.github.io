@@ -149,6 +149,7 @@
 			}
 			.box .image-thumb
 			{
+				position: relative;
 				width: 33px;
 			}
 
@@ -596,10 +597,6 @@
 			}
 
 		#banner .image-full
-		{
-			margin: 0;
-		}
-		#banner .image-thumb
 		{
 			margin: 0;
 		}
