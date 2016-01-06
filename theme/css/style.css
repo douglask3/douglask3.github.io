@@ -300,8 +300,9 @@
 		.image-thumb
 		{
 			display: block;
-			width: 3%;
+			width: 10%;
 			margin: 0 0 2em 0;
+			align: right;
 		}
 
 		.image-left
@@ -597,6 +598,10 @@
 			}
 
 		#banner .image-full
+		{
+			margin: 0;
+		}
+		#banner .image-thumb
 		{
 			margin: 0;
 		}
