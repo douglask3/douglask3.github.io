@@ -832,3 +832,19 @@ article em {
   font-style: italic;
   font-weight: bold;
 }
+
+<style>
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:100px;
+    float:left;
+    padding:5px;
+}
+#content_section {
+    width:350px;
+    float:left;
+    padding:10px;
+}
+</style>
