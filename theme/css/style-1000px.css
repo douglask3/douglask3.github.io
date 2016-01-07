@@ -64,7 +64,7 @@
 
 		#header-wrapper:after
 		{
-			height: 0em;
+			height: 10em;
 		}
 
 	#main-wrapper
@@ -74,7 +74,7 @@
 
 		#main-wrapper:after
 		{
-			height: 1em;
+			height: 2.5em;
 		}
 
 	#footer-wrapper
