@@ -847,4 +847,8 @@ article em {
     float:left;
     padding:0px;
 }
+
+.left_bar h1 {
+    color: red;
+}                                      
 </style>
