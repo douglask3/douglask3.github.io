@@ -64,7 +64,7 @@
 
 		#header-wrapper:after
 		{
-			height: 1em;
+			height: 0em;
 		}
 
 	#main-wrapper
