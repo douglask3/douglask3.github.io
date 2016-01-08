@@ -37,6 +37,17 @@
 		width: 60%;
 	}
 
+	hr.title2
+	{
+		display: block;
+		height: 1px;
+		border-bottom: 1px solid #770000;
+		border-top: 1px solid #d52349;
+		padding: 0;
+		align: centre;
+		width: 30%;
+	}
+
 	body
 	{
 		font-family: 'Source Sans Pro';
