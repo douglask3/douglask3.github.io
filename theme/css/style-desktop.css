@@ -283,6 +283,7 @@
 			#nav > ul > li.active > a
 			{
 				background: #f3f3f3;
+				color: #5d5d5d
 			}
 
 		#nav > ul > li.current_page_item
