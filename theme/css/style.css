@@ -136,7 +136,7 @@
 	section,
 	article
 	{
-		margin-bottom: 0em;
+		margin-bottom: 2.5em;
 	}
 
 		section > :last-child,
@@ -322,7 +322,7 @@
 		{
 			display: block;
 			width: 100%;
-			margin: 0 0 2em 0;
+			margin: 0 0 0em 0;
 		}
 
 		.image-thumb
