@@ -61,7 +61,8 @@
 						<div class="12u skel-cell-mainContent">
 							<!-- Content -->
 								<article class="box is-post">
-                                            <div class="4u">
+                                        <a href="#" class="image image-full"><img src="https://farm8.staticflickr.com/7644/17040573311_588b355f23_h.jpg"/></a>
+                                        <div class="4u">
     Picture
     <a href="{{ SITEURL }}/{{ article.url }}" class="image image-full"><img src="{{ article.picture }}" alt=""/></a>
 
@@ -80,6 +81,20 @@
 				</div>
 			</section>
 	</div>
+</div>
+
+        <div class="4u">
+    Picture
+    <a href="{{ SITEURL }}/{{ article.url }}" class="image image-full"><img src="{{ article.picture }}" alt=""/></a>
+
+    <header>
+        <hr>
+        <h2>Title</h2>
+        <span class="byline">{{ article.date }}</span>
+        <hr>
+    </header>
+    Summary
+    [a link relative to the current file to about me]({filename}about_me.md)
 </div>
 
 
