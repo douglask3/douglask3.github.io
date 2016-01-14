@@ -398,5 +398,3 @@
 	};
 
 })(jQuery);
-
-<script type="text/javascript" src="jquery.githubRepoWidget.min.js"></script>
