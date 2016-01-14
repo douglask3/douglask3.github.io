@@ -71,39 +71,39 @@
 						window.clearTimeout(hideTimeoutId);
 					})
 					.bind('doExpand', function() {
-						
+
 						if (menu.is(':visible'))
 							return false;
 
 						window.clearTimeout(hideTimeoutId);
-						
+
 						_menus.each(function() {
 							var t = jQuery(this);
 							if (!jQuery.contains(t.get(0), opener.get(0)))
 								t.trigger('doCollapse');
 						});
-						
+
 						var x, left, top, isTL = (menu.css('z-index') == settings.baseZIndex), oo = opener.offset(), op = opener.position(), opp = opener.parent().position(), ow = opener.outerWidth(), mw = menu.outerWidth();
-						
+
 						if (isTL)
 						{
 							if (!settings.detach)
 								x = op;
 							else
 								x = oo;
-						
+
 							top = x.top + opener.outerHeight() + settings.globalOffsetY;
 
 							switch (settings.alignment)
 							{
 								case 'right':
 									left = x.left - mw + ow;
-									
+
 									if (left < 0)
 										left = x.left;
-										
+
 									break;
-									
+
 								case 'center':
 									left = x.left - Math.floor((mw - ow) / 2);
 
@@ -111,13 +111,13 @@
 										left = x.left;
 									else if (left + mw > _window.width())
 										left = x.left - mw + ow;
-										
+
 									break;
 
 								case 'left':
 								default:
 									left = x.left;
-									
+
 									if (left + mw > _window.width())
 										left = x.left - mw + ow;
 
@@ -143,9 +143,9 @@
 							{
 								case 'right':
 									left += (-1 * opener.parent().outerWidth()) + settings.offsetX;
-									
+
 									break;
-								
+
 								case 'center':
 								case 'left':
 								default:
@@ -166,17 +166,17 @@
 							.css('top', top + 'px');
 
 						menu.css('opacity', '0.01').show();
-						
+
 						// Kludge!
 							var tmp = false;
-							
+
 							// Non-static position fix
 								if (opener.css('position') == 'relative'
 								||	opener.css('position') == 'absolute')
 									left = (-1 * op.left);
 								else
 									left = 0;
-							
+
 							if (menu.offset().left < 0)
 							{
 								left += opener.parent().outerWidth() - settings.offsetX;
@@ -208,7 +208,7 @@
 								});
 
 								break;
-						
+
 							case 'slide':
 
 								isLocked = true;
@@ -219,11 +219,11 @@
 								});
 
 								break;
-						
+
 							case 'fade':
 
 								isLocked = true;
-								
+
 								if (isTL && !settings.noOpenerFade)
 								{
 									var tmp;
@@ -234,7 +234,7 @@
 										tmp = 40;
 									else
 										tmp = Math.floor(settings.speed / 2);
-									
+
 									opener.fadeTo(tmp, 0.01, function() {
 										opener.addClass(settings.openerActiveClass);
 										opener.fadeTo(settings.speed, 1);
@@ -253,7 +253,7 @@
 								}
 
 								break;
-								
+
 							case 'instant':
 							default:
 
@@ -266,7 +266,7 @@
 						return false;
 					})
 					.bind('doCollapse', function() {
-						
+
 						if (!menu.is(':visible'))
 							return false;
 
@@ -274,39 +274,39 @@
 						opener.removeClass(settings.openerActiveClass);
 						menu.find('.' + settings.openerActiveClass).removeClass(settings.openerActiveClass);
 						menu.find('ul').hide();
-						
+
 						return false;
 
 					})
 					.bind('doToggle', function(e) {
-					
+
 						if (menu.is(':visible'))
 							menu.trigger('doCollapse');
 						else
 							menu.trigger('doExpand');
-					
+
 						return false;
 
 					});
-					
+
 				opener
 					.disableSelection_dropotron()
 					.addClass('opener')
 					.css('cursor', 'pointer')
 					.bind(_eventType, function(e) {
-					
+
 						if (isLocked)
 							return;
-						
+
 						e.preventDefault();
 						e.stopPropagation();
 						menu.trigger('doToggle');
-					
+
 					});
 
 				if (settings.expandMode == 'hover')
 					opener.hover(function(e) {
-							if (isLocked)	
+							if (isLocked)
 								return;
 							hoverTimeoutId = window.setTimeout(function() {
 								menu.trigger('doExpand');
@@ -324,7 +324,7 @@
 
 					if (isLocked)
 						return;
-					
+
 					_top.trigger('doCollapseAll');
 
 					e.stopPropagation();
@@ -333,25 +333,25 @@
 						e.preventDefault();
 
 				});
-				
+
 			_top.find('li')
 				.css('white-space', 'nowrap')
 				.each(function() {
 					var t = jQuery(this), a = t.children('a'), ul = t.children('ul');
-					
+
 					a.click(function(e) {
 						if (jQuery(this).attr('href').length < 1)
 							e.preventDefault();
 						else
 							e.stopPropagation();
 					});
-					
+
 					if (a.length > 0 && ul.length == 0)
 						t.click(function(e) {
 
 							if (isLocked)
 								return;
-								
+
 							_top.trigger('doCollapseAll');
 
 							e.stopPropagation();
@@ -373,16 +373,16 @@
 					for(var z = settings.baseZIndex, i = 1, y = menu; y.length > 0; i++)
 					{
 						y.css('z-index', z++);
-						
+
 						if (settings.submenuClassPrefix)
 							y.addClass(settings.submenuClassPrefix + (z - 1 - settings.baseZIndex));
-						
+
 						y = y.find('> li > ul');
 					}
 				}
 
 			});
-			
+
 			_window
 				.click(function() {
 					if (!isLocked)
@@ -398,3 +398,5 @@
 	};
 
 })(jQuery);
+
+<script type="text/javascript" src="jquery.githubRepoWidget.min.js"></script>
