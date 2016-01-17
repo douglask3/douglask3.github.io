@@ -559,6 +559,8 @@
 				ul.social li.tumblr:hover		{ background: #3b5671; }
 			ul.social li.googleplus				{ background: #da2713; }
 				ul.social li.googleplus:hover	{ background: #ea3723; }
+			ul.social li.github			    	{ background: #da2713; }
+				ul.social li.github:hover	    { background: #ea3723; }
 
 	/* Pennant */
 
