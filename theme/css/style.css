@@ -267,7 +267,14 @@
 				.button-icon-5:before	{ background-position: -128px 0px;	}
 
 	/* Icon */
-
+		.iconFlickr
+		{
+			display: inline-block;
+			width: 48px;
+			height: 48px;
+			background-image: url('images/social_flickr_box.png');
+			text-indent: -9999px;
+		}
 		.icon48
 		{
 			display: inline-block;
