@@ -570,8 +570,8 @@
 				ul.social li.github:hover	    { background: #101010; }
 			ul.social li.bitbucket			    { background: #205081; }
 				ul.social li.bitbucket:hover	{ background: #306091; }
-			ul.social li.bitbucket			    { rgb(1,1,1) transparent; }
-				ul.social li.bitbucket:hover	{ rgba(1,1,0.9); }
+			ul.social li.flickr			    { rgb(1,1,1) transparent; }
+				ul.social li.flickr:hover	{ rgba(1,1,0.9); }
 
 	/* Pennant */
 
