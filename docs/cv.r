@@ -42,8 +42,8 @@ doc[grepl(id, doc)] = info
 
 
 cat(doc, file = fileTemp, sep = "\n")
-command = paste('./../markdown-resume/bin/md2resume html --template swissen', fileTemp, fileHtmlOut)
+command = paste('./../markdown-resume/bin/md2resume html', fileTemp, fileHtmlOut)
 system(command)
 
-command = paste('./../markdown-resume/bin/md2resume pdf --template swissen', fileTemp, filePdfOut)
+command = paste('./../markdown-resume/bin/md2resume pdf', fileTemp, filePdfOut)
 system(command)

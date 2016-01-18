@@ -262,11 +262,13 @@ body.pdf h1 {
   letter-spacing: 0;
   margin-top: 0;
   font-size: 48px;
-  text-transform: none;
+  text-transform: uppercase;
+  font-weight: normal;
 }
 body.pdf h2 {
   letter-spacing: 0;
   text-transform: uppercase;
+  font-style: italic;
   font-weight: normal;
 }
 body.pdf h3 {
@@ -276,7 +278,7 @@ body.pdf h3 {
 }
 body.pdf h3+p {
   float: left;
-  width: 84%;
+  width: 78%;
 }
 body.pdf blockquote {
   top: 40px;
@@ -284,7 +286,7 @@ body.pdf blockquote {
   position: absolute;
 }
 body.pdf ul li {
-  width: 28%;
+  width: 33%;
   float: left;
 }
 body.pdf ul dl {
@@ -297,11 +299,11 @@ body.pdf ul dl dt {
   margin: 0 0 .75em;
 }
 body.pdf ul dl dd {
-  padding: 0 4em 0 0;
+  padding: 0 2em 0 0;
 }
 body.pdf ol {
   float: left;
-  width: 84%;
+  width: 79%;
   margin: .7em 0 0;
 }
 body.pdf ol li {
@@ -320,6 +322,8 @@ body.pdf dl {
   margin: .7em 0 0;
   page-break-inside: avoid !important;
   display: block;
+  width: 79%;
+  float: left;
 }
 body.pdf dl strong {
   float: right;
@@ -341,7 +345,7 @@ body.pdf dl em {
   content: ".";
 }
 body {
-  font-family: 'Helvetica Neue', 'Helvetica', Arial, serif;
+  font-family: 'Hoefler Text', Times New Roman, Times, serif;
   color: #444;
 }
 h1,
@@ -349,15 +353,7 @@ h2,
 h3,
 h4,
 ul dl dt {
-  font-family: 'Helvetica Neue Light', 'Helvetica', Arial, serif;
-}
-h1:before {
-  content: "+";
-  font-weight: bold;
-  color: orange;
-  margin: -1em 0 0 -0.5em;
-  position: relative;
-  top: -0.4em;
+  font-family: Futura, "Century Gothic", AppleGothic, sans-serif;
 }
 .container {
   margin: 0 auto;
@@ -406,23 +402,25 @@ h1 {
   padding: 0;
   font-size: 36px;
   letter-spacing: -1px;
-  font-weight: bold;
+  font-weight: normal;
 }
 h2 {
   margin: 0;
   padding: 0;
   font-size: 18px;
+  font-style: italic;
   letter-spacing: -1px;
-  font-weight: bold;
+  font-weight: normal;
 }
 h3 {
-  margin: 0;
+  margin: 0px 20px;
   padding: 0 0 .5em;
   font-size: 150%;
-  font-weight: bold;
+  font-style: italic;
+  font-weight: normal;
 }
 h3+p {
-  margin: 0 0 16px;
+  margin: .6em 0 16px;
   padding: 0;
   display: block;
   font-size: 104%;
@@ -432,6 +430,7 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  display: table;
 }
 ul li {
   margin: 0;
@@ -471,9 +470,8 @@ ol li:nth-child(1) {
   border-top: none;
 }
 dl {
-  float: left;
-  display: block;
-  width: 75%;
+  display: inline-block;
+  width: 78%;
   margin: 0;
   padding: 0;
 }
@@ -496,32 +494,6 @@ dl em {
   font-size: 110%;
   margin: .15em 0 .5em;
   font-style: bold;
-}
-dl dd li {
-  width: 100%;
-  margin: 0 1em 1em;
-  list-style-type: square;
-}
-dl dt {
-  display: block;
-  clear: both;
-}
-dl dt {
-  border-top: 1px solid #ccc;
-  padding-top: 1em;
-}
-h3 + dl dt:first-child {
-  border: 0;
-  padding-top: 0;
-}
-dl dd p:first-child {
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 1.2em;
-}
-ul li dt {
-  border: 0;
-  padding-top: 0;
 }
 #footer {
   display: none;
@@ -572,11 +544,15 @@ ul li dt {
   h1 {
     margin-top: 0;
     font-size: 48px;
-    letter-spacing: -1px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: normal;
   }
   h2 {
     text-transform: uppercase;
-    letter-spacing: 3px;
+    font-style: italic;
+    letter-spacing: 2px;
+    font-weight: normal;
   }
   h3 {
     float: left;
@@ -584,10 +560,10 @@ ul li dt {
   }
   h3+p {
     float: left;
-    width: 84%;
+    width: 78%;
   }
   ul li {
-    width: 28%;
+    width: 33%;
     float: left;
   }
   ul dl dt {
@@ -596,11 +572,11 @@ ul li dt {
     margin-bottom: .75em;
   }
   ul dl dd {
-    padding: 0 4em 0 0;
+    padding: 0 2em 0 0;
   }
   ol {
     float: left;
-    width: 84%;
+    width: 79%;
     margin: .6em 0 0;
   }
   ol li {
@@ -614,6 +590,9 @@ ul li dt {
   ol li:nth-child(2),
   ol li:nth-child(3) {
     border-top: none;
+  }
+  dl {
+    margin: .5em 0 0;
   }
   dl strong {
     float: right;
@@ -865,7 +844,7 @@ Working with students in primary and secondary education to encourage university
 
 <dd>
 <p>Generated using scholar packages:<br>  Keirstead , James ( 2015 ), scholar: analyse citation data from Google Scholar , R package version 0.1.4 , http://github.com/jkeirstead/scholar <br> and <br> <a href=" https://github.com/douglask3/webpageGenerator.git "> googleScholarGrab </a> version no. e745df2
-extracted from <a href="https://scholar.google.co.uk/citations?user= AJKyfI4AAAAJ &hl"> Douglas Kelley `s</a> <a href="https://scholar.google.co.uk/">google scholar</a> on Mon 18 Jan 2016 16:25:01</p>
+extracted from <a href="https://scholar.google.co.uk/citations?user= AJKyfI4AAAAJ &hl"> Douglas Kelley `s</a> <a href="https://scholar.google.co.uk/">google scholar</a> on Mon 18 Jan 2016 16:28:44</p>
 </dd>
 </dl>
 
