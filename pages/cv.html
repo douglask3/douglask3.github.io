@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>Douglas Kelley | Vegetation modeller</title>
+<style type="text/css">
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+audio:not([controls]) {
+  display: none;
+}
+[hidden] {
+  display: none;
+}
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+}
+body {
+  margin: 0;
+}
+a:focus {
+  outline: thin dotted;
+}
+a:hover,
+a:active {
+  outline: 0;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0;
+}
+h6 {
+  font-size: 0.75em;
+  margin: 2.33em 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+blockquote {
+  margin: 1em 40px;
+}
+dfn {
+  font-style: italic;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+p,
+pre {
+  margin: 1em 0;
+}
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+q {
+  quotes: none;
+}
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+small {
+  font-size: 75%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+dl,
+menu,
+ol,
+ul {
+  margin: 1em 0;
+}
+dd {
+  margin: 0 0 0 40px;
+}
+menu,
+ol,
+ul {
+  padding: 0 0 0 40px;
+}
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 0;
+}
+form {
+  margin: 0;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+  white-space: normal;
+  *margin-left: -7px;
+}
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+button,
+input {
+  line-height: normal;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+  *overflow: visible;
+}
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+  *height: 13px;
+  *width: 13px;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body.pdf {
+  color: black;
+}
+body.pdf a {
+  text-decoration: none;
+  color: black;
+}
+body.pdf .container {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+  background: none;
+  border: none;
+  border-width: 8px 0 2px 0;
+  text-align: left;
+}
+body.pdf .resume {
+  position: relative;
+  padding: 40px 80px;
+}
+body.pdf a[href$='.pdf'] {
+  display: none;
+}
+body.pdf h1 {
+  letter-spacing: 0;
+  margin-top: 0;
+  font-size: 48px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+body.pdf h2 {
+  letter-spacing: 0;
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: normal;
+}
+body.pdf h3 {
+  float: left;
+  width: 16%;
+  font-style: normal;
+}
+body.pdf h3+p {
+  float: left;
+  width: 78%;
+}
+body.pdf blockquote {
+  top: 40px;
+  right: 50px;
+  position: absolute;
+}
+body.pdf ul li {
+  width: 33%;
+  float: left;
+}
+body.pdf ul dl {
+  margin: 0;
+  padding: 0.3em 0 0;
+}
+body.pdf ul dl dt {
+  font-size: 122%;
+  font-weight: normal;
+  margin: 0 0 .75em;
+}
+body.pdf ul dl dd {
+  padding: 0 2em 0 0;
+}
+body.pdf ol {
+  float: left;
+  width: 79%;
+  margin: .7em 0 0;
+}
+body.pdf ol li {
+  width: 33%;
+  margin: 0;
+}
+body.pdf ol li:nth-child(3n) {
+  width: 34%;
+}
+body.pdf ol li:nth-child(1),
+body.pdf ol li:nth-child(2),
+body.pdf ol li:nth-child(3) {
+  border-top: none;
+}
+body.pdf dl {
+  margin: .7em 0 0;
+  page-break-inside: avoid !important;
+  display: block;
+  width: 79%;
+  float: left;
+}
+body.pdf dl strong {
+  float: right;
+  margin-top: -2em;
+}
+body.pdf dl em {
+  font-size: 130%;
+  font-style: normal;
+}
+
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+  content: ".";
+}
+body {
+  font-family: 'Hoefler Text', Times New Roman, Times, serif;
+  color: #444;
+}
+h1,
+h2,
+h3,
+h4,
+ul dl dt {
+  font-family: Futura, "Century Gothic", AppleGothic, sans-serif;
+}
+.container {
+  margin: 0 auto;
+  padding: 0;
+  background: whiteSmoke;
+  border: solid #666;
+  border-width: 8px 0 2px 0;
+  text-align: left;
+}
+.resume {
+  position: relative;
+  padding: 10px 20px;
+}
+a {
+  color: #990003;
+}
+a[href$='.pdf'] {
+  display: inline-block;
+  background: #666;
+  color: white;
+  padding: 6px 12px;
+  margin-bottom: 6px;
+  text-decoration: none;
+}
+blockquote {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4em;
+}
+hr {
+  display: block;
+  position: relative;
+  padding: 0;
+  margin: 18px auto;
+  width: 100%;
+  clear: both;
+  border: none;
+  border-top: 1px solid #CCC;
+  font-size: 1px;
+  line-height: 0;
+  overflow: visible;
+  page-break-after: avoid;
+}
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 36px;
+  letter-spacing: -1px;
+  font-weight: normal;
+}
+h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-style: italic;
+  letter-spacing: -1px;
+  font-weight: normal;
+}
+h3 {
+  margin: 0px 20px;
+  padding: 0 0 .5em;
+  font-size: 150%;
+  font-style: italic;
+  font-weight: normal;
+}
+h3+p {
+  margin: .6em 0 16px;
+  padding: 0;
+  display: block;
+  font-size: 104%;
+  line-height: 24px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: table;
+}
+ul li {
+  margin: 0;
+  padding: 0;
+}
+ul dl {
+  margin: .3em 0 0;
+  padding: 0;
+  width: 100%;
+}
+ul dl dt {
+  font-size: 100%;
+}
+ul dl dd {
+  margin: 0 0 1em;
+  padding: 0 2em 0 0;
+  font-size: .8em;
+  line-height: 1.5em;
+}
+ol {
+  margin: 0;
+  padding: 0 0 .75em;
+  width: 84%;
+  display: inline-block;
+}
+ol li {
+  margin: 0 0 0 1em;
+  padding: 0;
+  border-top: 1px solid #CCCCCC;
+  width: 100%;
+  float: left;
+  list-style: none;
+  line-height: 24px;
+  font-size: 14px;
+}
+ol li:nth-child(1) {
+  border-top: none;
+}
+dl {
+  display: inline-block;
+  width: 78%;
+  margin: 0;
+  padding: 0;
+}
+dl dt {
+  margin: 0;
+  padding: 0;
+  font-size: 140%;
+}
+dl dd {
+  margin: 0 0 1.5em;
+  padding: 0;
+  font-size: 80%;
+  line-height: 1.4em;
+}
+dl strong {
+  display: block;
+}
+dl em {
+  display: block;
+  font-size: 110%;
+  margin: .15em 0 .5em;
+  font-style: bold;
+}
+#footer {
+  display: none;
+}
+#footer + p {
+  width: 100%;
+  font-size: 11px;
+  text-align: center;
+}
+
+@media screen and (min-width: 37.5em) {
+  body {
+    padding: 2em 0;
+  }
+  blockquote {
+    top: 10px;
+    right: 50px;
+    position: absolute;
+  }
+  h1 {
+    margin-top: .5em;
+  }
+  ol {
+    margin: 0 0 0 1em;
+  }
+  ol li {
+    width: 50%;
+    margin: 0;
+  }
+  ol li:nth-child(1),
+  ol li:nth-child(2) {
+    border-top: none;
+  }
+}
+@media screen and (min-width: 57em) {
+  .container {
+    width: 912px;
+  }
+  .resume {
+    position: relative;
+    padding: 40px 50px;
+  }
+  blockquote {
+    top: 40px;
+    right: 50px;
+    position: absolute;
+  }
+  h1 {
+    margin-top: 0;
+    font-size: 48px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: normal;
+  }
+  h2 {
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: 2px;
+    font-weight: normal;
+  }
+  h3 {
+    float: left;
+    width: 16%;
+  }
+  h3+p {
+    float: left;
+    width: 78%;
+  }
+  ul li {
+    width: 33%;
+    float: left;
+  }
+  ul dl dt {
+    font-size: 122%;
+    font-weight: normal;
+    margin-bottom: .75em;
+  }
+  ul dl dd {
+    padding: 0 2em 0 0;
+  }
+  ol {
+    float: left;
+    width: 79%;
+    margin: .6em 0 0;
+  }
+  ol li {
+    width: 33%;
+    margin: 0;
+  }
+  ol li:nth-child(3n) {
+    width: 34%;
+  }
+  ol li:nth-child(1),
+  ol li:nth-child(2),
+  ol li:nth-child(3) {
+    border-top: none;
+  }
+  dl {
+    margin: .5em 0 0;
+  }
+  dl strong {
+    float: right;
+    margin-top: -2em;
+  }
+  dl em {
+    font-size: 130%;
+    font-style: normal;
+  }
+}
+
+</style>
+</head>
+
+<body class="">
+
+<div class="container">
+    <div class="resume">
+        <p><a href="javascript:history.back()">Go Back to website</a></p>
+
+<h1>Douglas Kelley</h1>
+
+<h2>Vegetation modeller</h2>
+
+<blockquote>
+  <p><a href="/docs/resume.pdf">Download PDF</a><br />
+  <a href="douglas.i.kelley@gmail.com">douglas.i.kelley@gmail.com</a><br />
+  +44 (0) 7936 726 819</p>
+</blockquote>
+
+<hr />
+
+<h2 id="profile">Summary</h2>
+
+<hr />
+
+<h3>Academic qualification</h3>
+
+<ul>
+<li><dl>
+<dt>2014 PhD Ecology</dt>
+<dd><a href="http://bcd.mq.edu.au/?page_id=171">Macquarie University, Department of Biological Sciences, Ryde, NSW, Australia</a>
+<a href="http://bcd.mq.edu.au/?p=361">Modelling Australian fire regimes</a>
+Benchmarking and developing the LPX Dynamic Global Vegetation Model (DGVM) to improve the simulation of fire and fire-vegetation interacting. Using this new version of LPX to simulate fire, vegetation and carbon dynamics in Australia over the 21\textsuperscript{st} century</dd>
+</dl></li>
+<li><dl>
+<dt>2008 <a href="http://www.bristol.ac.uk/cabot/postgrad/msc-ccsp.html">MSc Earth System Science</a></dt>
+<dd><a href="http://www.bristol.ac.uk/earthsciences/">University of Bristol, Department of Earth Sciences, UK</a>
+<em>Main dissertation: Statistical modelling of global fire regimes.</em>
+Other subjects covered: Climate change science and policy; Earth system modelling; Natural hazards; Remote sensing &amp; GIS; Isotopes and other Earth System tracers</dd>
+</dl></li>
+<li><dl>
+<dt>2007 <a href="http://www2.warwick.ac.uk/study/undergraduate/courses/f300">BSc (Hons.) Physics</a></dt>
+<dd><a href="http://www2.warwick.ac.uk/fac/sci/physics">University of Warwick, Department of Physics, UK</a>
+<em>Main dissertation: Modelling atmospheric effects on starlight.</em></dd>
+</dl></li>
+</ul>
+
+<hr />
+
+<h3>Employment History</h3>
+
+<ul>
+<li><dl>
+<dt>Apr 2015-present <em>Postdoctoral Research Assistant</em></dt>
+<dd><em>Department of Geography &amp; Environmental Science,
+University of Reading, UK.</em></dd>
+</dl></li>
+<li><dl>
+<dt>Jun 2014-Mar 2015 <em>Postdoctoral Research Assistant</em></dt>
+<dd><em>Department of Biological Sciences, Macquarie University, Ryde, NSW, Australia.</em></dd>
+</dl></li>
+<li><dl>
+<dt>Sep 2008-Sep 2010 <em>Research Assistant</em></dt>
+<dd><em>Department of Geographical Sciences, University of Bristol, UK.</em></dd>
+</dl></li>
+</ul>
+
+<hr />
+
+<h3>Publications</h3>
+
+<p>Total Citations:   190 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H index:   6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i10 index:   3</p>
+
+<hr />
+
+<h3>Awards</h3>
+
+<ul>
+<li><dl>
+<dt>2010-2014 <em><a href="http://www.hdr.mq.edu.au/information_about/scholarships">Macquarie University Research Excellence Scholarship</a></em></dt>
+<dd><em>Macquarie University, Ryde, NSW, Australia</em></dd>
+</dl></li>
+<li><dl>
+<dt>2013 <em><a href="http://www.hdr.mq.edu.au/information_for/current_candidates/financial_support">Post Graduate Research Fund (PGRF)</a></em></dt>
+<dd><em>Macquarie University, Ryde, NSW, Australia</em></dd>
+</dl></li>
+<li><dl>
+<dt>2011 <em>Biology postgrad conference best presentation</em></dt>
+<dd><em>Biological Sciences, Macquarie University, Ryde, NSW, Australia</em></dd>
+</dl></li>
+</ul>
+
+<hr />
+
+<h3>Current Research Interests</h3>
+
+<p>Vegetation-climate dynamics and ecosystem modelling, including:
+<br>-&nbsp;&nbsp;&nbsp;&nbsp; Fire dynamics and fire&#8212;climate&#8212;vegetation interactions.
+<br>-&nbsp;&nbsp;&nbsp;&nbsp; Wildfire impacts (on e.g vegetation, carbon-cycle, hydrology)
+<br>-&nbsp;&nbsp;&nbsp;&nbsp; Vegetation disturbance resistance and recovery
+<br>-&nbsp;&nbsp;&nbsp;&nbsp; Plant resource allocation strategies.</p>
+
+<hr>
+
+<p><br>&nbsp;<br>&nbsp;<br></p>
+
+<p style="page-break-after:always;"></p>
+
+<hr>
+
+<hr>
+
+<h2>FULL CURRICULUM VITAE</h2>
+
+<hr />
+
+<h3 id="Presonal">Personal Details</h3>
+
+<ul>
+<li><p>Name: Dr Douglas I Kelley</p></li>
+<li><p>Date of Birth: 06/08/1984</p></li>
+<li><p>Nationality: British</p></li>
+<li><dl>
+<dt>Work Address</dt>
+<dd>Department of Geography &amp; Environmental Science
+<br> University of Reading
+<br> Whiteknights
+<br> Reading
+<br> RG6 6AB
+<br> UK</dd>
+</dl></li>
+<li><dl>
+<dt>Home Address</dt>
+<dd>Flat 40
+<br> 18 Oxford Road
+<br> Reading
+<br> Berkshire
+<br> RG1 7LB
+<br> UK</dd>
+</dl></li>
+<li><p>Email: <a href="douglas.i.kelley@gmail.com">douglas.i.kelley@gmail.com</a></p></li>
+<li><p>Phone: +44 (0) 7936 726 819</p></li>
+<li><p>Web: <a href="http://douglask3.github.io/">http://douglask3.github.io/</a></p></li>
+</ul>
+
+<hr />
+
+<h3 id="experience">Higher Education</h3>
+
+<dl>
+<dt><a href="https://drive.google.com/file/d/0B6T4MHlQ-DuNS2ZsV09mdkdwYms/view?usp=sharing">PhD Ecology</a></dt>
+<dd><em><a href="http://bcd.mq.edu.au/?page_id=171">Macquarie University, Department of Biological Sciences, Ryde, NSW, Australia</a>
+<a href="http://bcd.mq.edu.au/?p=361">Modelling Australian fire regimes</a></em>
+<strong>2010-2014</strong>
+Benchmarking and developing the LPX Dynamic Global Vegetation Model (DGVM) to improve the simulation of fire and fire-vegetation interacting. Using this new version of LPX to simulate fire, vegetation and carbon dynamics in Australia over the 21\textsuperscript{st} century</dd>
+
+<dt><a href="http://www.bristol.ac.uk/cabot/postgrad/msc-ccsp.html">MSc Earth System Science</a></dt>
+<dd><em><a href="http://www.bristol.ac.uk/earthsciences/">University of Bristol, Department of Earth Sciences, UK</a></em>
+<strong>2007-2008</strong>
+<em>Main dissertation: Statistical modelling of global fire regimes.</em>
+Other subjects covered: Climate change science and policy; Earth system modelling; Natural hazards; Remote sensing &amp; GIS; Isotopes and other Earth System tracers</dd>
+
+<dt><a href="http://www2.warwick.ac.uk/study/undergraduate/courses/f300">BSc (Hons.) Physics</a></dt>
+<dd><em><a href="http://www.bristol.ac.uk/earthsciences/">University of Bristol, Department of Earth Sciences, UK</a></em>
+<strong>2002-2007</strong>
+<em>Main dissertation: Modelling atmospheric effects on starlight.</em></dd>
+</dl>
+
+<hr />
+
+<h3>Employment History</h3>
+
+<dl>
+<dt>Postdoctoral Research Assistant</dt>
+<dd><em><a href="https://www.reading.ac.uk/geographyandenvironmentalscience/">Department of Geography &amp; Environmental Science,
+University of Reading, UK.</a></em>
+<strong>April 2015-present</strong>
+Job description</dd>
+
+<dt>Postdoctoral Research Assistant</dt>
+<dd><em><a href="https://bmedlyn.wordpress.com/">Cafe M Research Group, Department of Biological Sciences, Macquarie University, Ryde, NSW, Australia</a></em>
+<strong>Oct 2014-Apr 2015</strong>
+Testing conceptual phenology and plant carbon allocation models within vegetation process models</dd>
+
+<dt>Research Assistant</dt>
+<dd><em><a href="http://www.mq.edu.au/about/about-the-university/faculties-and-departments/faculty-of-science-and-engineering/departments-and-centres/department-of-biological-sciences">Department of Biological Sciences, Macquarie University, Ryde, NSW, Australia</a></em>
+<strong>Jun 2014-Sep 2014</strong>
+Modelling past and future fire regime changes and its feedback on vegetation
+Testing conceptual phenology and plant carbon allocation models within vegetation process models</dd>
+
+<dt>Research Assistant</dt>
+<dd><em><a href="http://www.bristol.ac.uk/geography/">Department of Geographical Sciences, University of Bristol, UK</a></em>
+<strong>Sep 2008-Sep 2010</strong>
+DGVM fire model development. Applying developed model to: test to effectiveness of different fire management techniques in current and future climates; simulate paleo vegetation and carbon stocks.</dd>
+
+<dt><a href="http://www.greencycles.org/greencycles1/ES4%20flyer_2008.pdf">Earth System Science Summer School coordinator</a></dt>
+<dd><em><a href="http://www.bristol.ac.uk/earthsciences/">Department of Earth Sciences, University of Bristol, UK</a></em>
+<strong>Apr 2008-Sep 2008</strong>
+Publicity; lecture and seminar timetabling; finding and organising guest lectures; general admin.</dd>
+
+<dt>Widening Participation</dt>
+<dd><em><a href="http://www.bristol.ac.uk/sraa/uk-student-recruitment/student-support-team/">Widening Participation Office, University of Bristol</a></em>
+<strong>Sep 2007-Sep 2008</strong>
+Working with students in primary and secondary education to encourage university attendance from low socio-economic backgrounds: helping organize &amp; run University open days and campus tours; in-school presentations and career evenings.</dd>
+</dl>
+
+<hr />
+
+<h3>Current Research Interests</h3>
+
+<p>Doug is a Postdoctoral Research Fellow working with the Climate And Forest Ecosystem Modelling and Biosphere and Climate Dynamic groups at Macquarie University. His research focuses on modelling the interactions between wildfire, climate and vegetation. In addition, he is also working on plant resource allocation strategies. He is particularly interested in ways vegetation resist and recover after fire, and the wider implications this has on the carbon cycle and hydrology.</p>
+
+<hr />
+
+<h3>Publications</h3>
+
+<dl>
+<dt>Total Citations:   190 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H index:   6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i10 index:   3</dt>
+<dd>
+<p><em>IC Prentice, DI Kelley, PN Foster, P Friedlingstein, SP Harrison, &#8230;: Modeling fire and the terrestrial carbon balance, Global Biogeochemical Cycles 25 (3) (2011)</em>. citations:86</p>
+</dd>
+
+<dd><em>P Ciais, A Tagliabue, M Cuntz, L Bopp, M Scholze, G Hoffmann, &#8230;: Large inert carbon pool in the terrestrial biosphere during the Last Glacial Maximum, Nature Geoscience 5 (1), 74-79 (2012)</em>. citations:42</dd>
+
+<dd><em>DI Kelley, IC Prentice, SP Harrison, H Wang, M Simard, JB Fisher, &#8230;: A comprehensive benchmarking system for evaluating global vegetation models, Biogeosciences 10, 3313-3340 (2013)</em>. citations:37</dd>
+
+<dd><em>DI Kelley, SP Harrison, IC Prentice: Improved simulation of fire-vegetation interactions in the Land surface Processes and eXchanges dynamic global vegetation model (LPX-Mv1), Copernicus Publications  (2014)</em>. citations:8</dd>
+
+<dd><em>T Kaminski, W Knorr, G Schürmann, M Scholze, PJ Rayner, S Zaehle, &#8230;: The BETHY/JSBACH carbon cycle data assimilation system: experiences and challenges, Journal of Geophysical Research: Biogeosciences 118 (4), 1414-1426 (2013)</em>. citations:8</dd>
+
+<dd><em>MJB Zeppel, SP Harrison, HD Adams, DI Kelley, G Li, DT Tissue, &#8230;: Drought and resprouting plants, New Phytologist 206 (2), 583-589 (2015)</em>. citations:6</dd>
+
+<dd><em>DI Kelley, SP Harrison: Enhanced Australian carbon sink despite increased wildfire during the 21st century, Environmental Research Letters 9 (10), 104015 (2014)</em>. citations:2</dd>
+
+<dd><em>D Kelley, SP Harrison, IC Prentice: Implications of introducing realistic fire response traits in a Dynamic Global Vegetation Model, AGU Fall Meeting Abstracts 1, 06 (2013)</em>. citations:0</dd>
+
+<dd><em>S Harrison, J Midgley, B Hoffmann, I Radford, C Nano, B Murphy10, &#8230;: Using plant functional traits to predict ecosystem vulnerability to changing fire regimes,   (NA)</em>. citations:0</dd>
+
+<dd>
+<p>Generated using scholar packages:<br>  Keirstead , James ( 2015 ), scholar: analyse citation data from Google Scholar , R package version 0.1.4 , http://github.com/jkeirstead/scholar <br> and <br> <a href=" https://github.com/douglask3/webpageGenerator.git "> googleScholarGrab </a> version no. 7332d69
+extracted from <a href="https://scholar.google.co.uk/citations?user= AJKyfI4AAAAJ &hl"> Douglas Kelley `s</a> <a href="https://scholar.google.co.uk/">google scholar</a> on Mon 18 Jan 2016 16:10:00</p>
+</dd>
+</dl>
+
+<h4>In review</h4>
+
+<p>Doug is a Postdoctoral Research Fellow working with the Climate And Forest Ecosystem Modelling and Biosphere and Climate Dynamic groups at Macquarie University. His research focuses on modelling the interactions between wildfire, climate and vegetation. In addition, he is also working on plant resource allocation strategies. He is particularly interested in ways vegetation resist and recover after fire, and the wider implications this has on the carbon cycle and hydrology.</p>
+
+<hr />
+
+<h3>Conference Papers</h3>
+
+<dl>
+<dt>International Conference Presentations</dt>
+<dd><em>Kelley, D. I., Harrison, S. P. and Prentice, I. C.: Implications of introducing realistic fire response traits in a Dynamic Global Vegetation Model, AGU Fall Meeting Abstracts, 1,  p.6. Dec 2013.</em></dd>
+
+<dt>Visits and Internal Presentations</dt>
+<dd><em>Kelley, D. I., Harrison, S. P., Prentice, I. C. and Medlyn, B. E.: Modelling Australian Fire Regimes, Thesis completion seminar, Macquarie University, Ryde, Australia. Mar 2015</em></dd>
+
+<dd><em>Kelley, D. I., Harrison, S. P. and Prentice, I. C.: The LPX fire-enabled Vegetation Model, visit to Centre for Environmental Risk Management of Bushfires, University of Wollongong, NSW, Australia. May 2013.</em></dd>
+
+<dd><em>Kelley, D. I., Harrison, S. P., Prentice, I. C. and Medlyn B. : The effects of climate change on Australian fire regimes, Postgraduate supplementary conference, Macquarie University, Ryde, Australia. Nov 2012.</em></dd>
+
+<dd><em>Kelley, D. I.: Development of lightning ignitions scheme in LPX-DGVM, Biosphere and Climate Dynamics brown bag seminars, Macquarie University, Ryde, Australia. Sep 2012.</em></dd>
+
+<dd><em>Kelley, D. I.: Benchmarking vegetation and fire in LPX-DGVM, Biosphere and Climate Dynamics brown bag seminars, Macquarie University, Ryde, Australia. Mar 2012.</em></dd>
+
+<dd><em>Kelley, D. I., Prentice, I. C., Wang, H., Wills, K. and Harrison, S. P.: A comprehensive benchmarking system for evaluating global vegetation models, Postgraduate supplementary conference, Macquarie University, Ryde, Australia. Nov 2011.</em></dd>
+
+<dd><em>Kelley, D. I., Prentice, I. C., Wang, H., Wills, K. and Harrison, S. P.: A comprehensive benchmarking system for evaluating global vegetation models, Climate Futures Postgraduate Forum, Macquarie University, Ryde, Australia. Nov 2011.</em></dd>
+
+<dd><em>Kelley, D. I.: Benchmark data-sets for assessing DGVM performance, Biosphere and Climate Dynamics brown bag seminars, Macquarie University, Ryde, Australia. Sep 2011.</em></dd>
+
+<dd><em>Kelley, D. I., Harrison, S. P. and Prentice, I. C.: The effects of climate change on Australian fire regimes, Postgraduate supplementary conference, Macquarie University, Ryde, Australia. 17th Nov 2010.</em></dd>
+
+<dd><em>Kelley, D. I.: Transient Biomization Scheme, course seminar for Msc Earth Systems Science, Department of Earth Sciences, University of Bristol, UK. 2 July 2008.</em></dd>
+
+<dd><em>Kelley, D. I., Elena Counce: Forest Fire simulator, course seminar for Msc Earth Systems Science, Department of Earth Sciences, University of Bristol, UK. 19 Nov 2007.</em></dd>
+
+<dd><em>Kelley, D I., Harrison, S. P.: Comparison of simulated fire regimes at the Last Glacial Maximum and for the Mid-Holocene with charcoal data, QUEST: Quantifying and Understanding the Earth System Open Science Conference and Annual Science Meeting, Mar 2008</em></dd>
+</dl>
+
+<hr />
+
+<h3>Workshops and Consultancy Visits</h3>
+
+<dl>
+<dt><a href="http://aceas.org.au/Fire_traits_report.pdf">Using plant functional traits to predict ecosystem vulnerability to changing fire regimes</a></dt>
+<dd><em><a href="https://www.uq.edu.au/">University of Queensland, Brisbane, QL, Australia</a></em>
+<strong>Oct 2013</strong>
+Data Synthesis workshop for fire resilience and response traits}{Australian Centre for Ecological Analysis and Synthesis <a href="http://www.aceas.org.au/">ACEAS</a></dd>
+
+<dt><a href="https://bitbucket.org/teambcd/resprouting_workshop">Fire response traits database</a></dt>
+<dd><em><a href="https://www.mq.edu.au/">Macquarie University, Ryde, Australia</a></em>
+<strong>May 2013</strong>
+Workshop on construction of database on distribution of different resprouting traits in climate space, as part of the Australian Centre for Ecological Analysis and Synthesis (<a href="http://www.aceas.org.au/">ACEAS</a>) Working group &#8216;<a href="http://aceas.org.au/Fire_traits_report.pdf">Using plant functional traits to predict ecosystem vulnerability to changing fire regimes</a>&#8217;.</dd>
+
+<dt><a href="https://www.researchgate.net/publication/267995882_Impacts_of_Future_Climate_Change_on_Vegetation_Fire_and_Runoff_in_Jordan">Technical Assistance for Climate Change</a></dt>
+<dd><em><a href="http://www.rscn.org.jo/">Royal Society for the Conservation of Nature, Jordan</a></em>
+<strong>Oct 2009</strong>
+Report on Impacts of Future Climate Change on Vegetation, Fire, and Runoff in Jordan</dd>
+</dl>
+
+<hr />
+
+<h3>Training Courses</h3>
+
+<dl>
+<dt><a href="http://software-carpentry.org/">Software Carpentry</a></dt>
+<dd><strong>Feb 2013</strong>
+Programming philosophy, code structure and version control</dd>
+
+<dt><a href="http://www.mq.edu.au/research/research-centres,-groups-and-facilities/secure-planet/centres/centre-for-genes-to-geoscience">Genses2Geoscience</a>: <a href="http://www.mq.edu.au/research/research-centres,-groups-and-facilities/secure-planet/centres/centre-for-genes-to-geoscience/research-enrichment-program#writing">Writing for journals</a></dt>
+<dd><strong>Aug 2012</strong>
+Drafting and writing journal articles and research proposals</dd>
+
+<dt><a href="http://www.mq.edu.au/research/research-centres,-groups-and-facilities/secure-planet/centres/centre-for-genes-to-geoscience">Genses2Geoscience</a>: sql</dt>
+<dd><strong>Sep 2011</strong>
+Database Construction using sql</dd>
+
+<dt><a href="http://www.mq.edu.au/research/research-centres,-groups-and-facilities/secure-planet/centres/centre-for-genes-to-geoscience">Genses2Geoscience</a>: <a href="http://www.mq.edu.au/research/research-centres,-groups-and-facilities/secure-planet/centres/centre-for-genes-to-geoscience/research-enrichment-program#small">Teaching in small groups</a></dt>
+<dd><strong>Aug 2011</strong>
+Effective questioning, encouraging equal participation, and managing student  behaviour.</dd>
+
+<dt>Planning and writing journal articles</dt>
+<dd><strong>Nov 2009</strong>
+Planning articles to fit journals</dd>
+</dl>
+
+<hr />
+
+<h3>Awards</h3>
+
+<dl>
+<dt><a href="http://www.hdr.mq.edu.au/information_about/scholarships">International Macquarie University Research Excellence Scholarship (iMQRES)</a></dt>
+<dd><em><a href="https://www.mq.edu.au/">Macquarie University, Ryde, Australia</a></em>
+<strong>2010-2014</strong>
+Postgraduate award for completion of PhD</dd>
+
+<dt><a href="http://www.hdr.mq.edu.au/information_for/current_candidates/financial_support">Post Graduate Research Fund (PGRF)</a></dt>
+<dd><em><a href="https://www.mq.edu.au/">Macquarie University, Ryde, Australia</a></em>
+<strong>2013</strong>
+Competitive award to enhance postgraduate research experience.
+Funded attendance at the 2013 AGU fall conference in order to present DGVM development and future projection of fire regimes and terrestrial carbon stocks under climate change</dd>
+
+<dt>Postgraduate conference - best presentation</dt>
+<dd><em><a href="http://www.mq.edu.au/about/about-the-university/faculties-and-departments/faculty-of-science-and-engineering/departments-and-centres/department-of-biological-sciences">Biological Sciences, Macquarie University, Ryde, Australia</a></em>
+Best presentation out of the departments 78 postgraduate students at the annual post-graduate conference.
+Awarded for presentation on a vegetation model benchmarking system}</dd>
+</dl>
+
+<hr />
+
+<h3 id="skills">Skills</h3>
+
+<p>Need to replace</p>
+
+<ul>
+<li><dl>
+<dt>Web Design</dt>
+<dd>Assertively exploit wireless initiatives rather than synergistic core competencies.</dd>
+</dl></li>
+<li><dl>
+<dt>Interface Design</dt>
+<dd>Credibly streamline mission-critical value with multifunctional functionalities.</dd>
+</dl></li>
+<li><dl>
+<dt>Project Direction</dt>
+<dd>Proven ability to lead and manage a wide variety of design and development projects in team and independent situations.</dd>
+</dl></li>
+<li><dl>
+<dt>My Cool Side Project</dt>
+<dd>For items which don&#8217;t have a clear time ordering, a definition
+list can be used to have named items.</dd>
+</dl>
+
+<ul>
+<li>These items can also contain lists, but you need to mind the
+indentation levels in the markdown source.</li>
+<li>Second item.</li>
+</ul></li>
+<li><dl>
+<dt>Open Source</dt>
+<dd>List open source contributions here, perhaps placing emphasis on
+the project names, for example the <strong>Linux Kernel</strong>, where you
+implemented multithreading over a long weekend, or <strong>node.js</strong>
+(with <a href="http://nodejs.org">link</a>) which was actually totally
+your idea&#8230;</dd>
+</dl></li>
+<li><dl>
+<dt>Web Design</dt>
+<dd>Assertively exploit wireless initiatives rather than synergistic core competencies.</dd>
+</dl></li>
+</ul>
+
+<hr />
+
+<h3>Technical {#technical} Expand on main</h3>
+
+<ul>
+<li><dl>
+<dt>Programming</dt>
+<dd>Fortran</dd>
+
+<dd>C</dd>
+
+<dd>C++</dd>
+
+<dd>R</dd>
+
+<dd>python</dd>
+
+<dd>Matlab</dd>
+
+<dd>VB</dd>
+
+<dd>sql</dd>
+</dl></li>
+<li><dl>
+<dt>Publishing</dt>
+<dd>XHTML</dd>
+
+<dd>CSS</dd>
+
+<dd>PHP</dd>
+
+<dd>Latex</dd>
+
+<dd>Markdown</dd>
+</dl></li>
+<li><dl>
+<dt>Other stuff</dt>
+<dd>OS X</dd>
+
+<dd>Windows XP/Vista</dd>
+
+<dd>Linux</dd>
+
+<dd>CVS / Subversion</dd>
+
+<dd><a href="https://bitbucket.org/douglask3">git</a></dd>
+</dl></li>
+<li><dl>
+<dt>Software</dt>
+<dd>GIMP</dd>
+
+<dd>Scribus</dd>
+
+<dd>Photoshop/Illustrator</dd>
+
+<dd>Standard office/Open office</dd>
+</dl></li>
+</ul>
+
+<hr />
+
+<h3>Collaborations</h3>
+
+<p>Doug is a Postdoctoral Research Fellow working with the Climate And Forest Ecosystem Modelling and Biosphere and Climate Dynamic groups at Macquarie University. His research focuses on modelling the interactions between wildfire, climate and vegetation. In addition, he is also working on plant resource allocation strategies. He is particularly interested in ways vegetation resist and recover after fire, and the wider implications this has on the carbon cycle and hydrology.</p>
+
+<hr />
+
+<h3>Relevant Extra-Circular activity</h3>
+
+<dl>
+<dt>Committee member responsible for <a href="http://www.eppingdac.com.au/">Web-design</a>, Communications, and social runners</dt>
+<dd><em><a href="http://www.eppingdac.com.au/">Epping and District Athletics Clubs North Epping, Hornsby, NSW, Australia</a></em>
+<strong>Feb 2011-May 2015</strong>
+Website development <a href="http://www.eppingdac.com.au/">www.eppingdac.com.au</a>; designing, producing and distributing <a href="http://www.eppingdac.com.au/newsletter">newsletter</a> and e-publicity for local community running and athletics club</dd>
+
+<dt>Student Union involvement <a href="http://www.eppingdac.com.au/">Web-design</a>, Communications, and social runners</dt>
+<dd><em><a href="http://www.warwicksu.com/">University and Warwick</a> and <a href="http://www.ubu.org.uk/">Bristol University</a></em>
+<strong>2002-2008</strong>
+Sabbatical year sitting on board of directors of Warwick Students Union responsible for the Student Advice and Welfare department; 3 years as charity trustee and 6 years on student council responsible for Science Faculty representation; committee posts on various student run sports clubs and societies including People and Planet, <a href="http://tv.warwick.ac.uk/">Student TV station</a>, Student Support Groups, and running clubs</dd>
+
+<dt>Digital Photography and Art</dt>
+<dd><em><a href="http://www.open.ac.uk/">Open Univesity, UK</a></em>
+<strong>2002-2008</strong>
+<a href="http://www.open.ac.uk/library/digital-archive/module/xcri:T189/study">Open University undergrad course in digital photography and image manipulation</a>. See <a href="http://www.flickr.com/photos/doug_from_the_uk/">www.flickr.com/photos/doug_from_the_uk</a></dd>
+</dl>
+
+<hr />
+
+<h3>Referees</h3>
+
+<p>Doug is a Postdoctoral Research Fellow working with the Climate And Forest Ecosystem Modelling and Biosphere and Climate Dynamic groups at Macquarie University. His research focuses on modelling the interactions between wildfire, climate and vegetation. In addition, he is also working on plant resource allocation strategies. He is particularly interested in ways vegetation resist and recover after fire, and the wider implications this has on the carbon cycle and hydrology.</p>
+
+<hr />
+
+<h3 id="footer">Footer</h3>
+
+<p>Douglas Kelley &#8212; <a href="craig@there4development.com">douglas.i.kelley@gmail.com</a> &#8212; +44 (0) 7936 726 819</p>
+
+<hr />
+
+    </div>
+</div>
+
+</body>
+</html>
