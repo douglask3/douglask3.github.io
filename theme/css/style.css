@@ -664,7 +664,7 @@
 				font-style: normal;
 			}
 
-		#banner .image-full, .image-full-index
+		#banner .image-full .image-full-index
 		{
 			margin: 0;
 		}
