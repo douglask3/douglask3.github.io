@@ -53,7 +53,7 @@
 		{
 		}
 
-			.actions .button .button-Index
+			.actions .button
 			{
 				margin-right: 0.75em;
 			}
@@ -74,7 +74,7 @@
 
 	/* Button */
 
-		.button .button-Index
+		.button, .button-Index
 		{
 			font-size: 1.1em;
 			padding: 0.65em 1.5em 0.65em 1.5em;
