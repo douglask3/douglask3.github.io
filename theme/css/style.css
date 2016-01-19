@@ -199,7 +199,7 @@
 
 	/* Button */
 
-		.button
+		.button .button-Index
 		{
 			display: inline-block;
 			text-decoration: none;
@@ -217,12 +217,12 @@
 			transition: background-color .25s ease-in-out;
 		}
 
-			.button:hover
+			.button:hover .button-Index:hover
 			{
 				background: #e53359;
 			}
 
-			.button:active
+			.button:active .button-Index:active
 			{
 				background: #c51349;
 			}
