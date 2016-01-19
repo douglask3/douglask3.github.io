@@ -341,12 +341,14 @@
 				width: auto;
 			}
 
-		.image-full
+		.image-full, .image-full-index
 		{
 			display: block;
 			width: 100%;
 			margin: 0 0 0.5em 0;
 		}
+
+		.iamge-full-index { margin: 0 0 0 0;}
 
 		.image-thumb
 		{
