@@ -181,7 +181,7 @@
 			border-bottom: solid 1px #ccc;
 		}
 
-			.box .image-full .image-full-index
+			.box .image-full
 			{
 				position: relative;
 				width: auto;
@@ -348,7 +348,7 @@
 			margin: 0 0 0.5em 0;
 		}
 
-		.iamge-full-index { margin: 0 0 0 0;}
+		.iamge-full-index { margin: 0 0 0 0; width: 100%; padding: 0;}
 
 		.image-thumb
 		{
@@ -664,7 +664,7 @@
 				font-style: normal;
 			}
 
-		#banner .image-full .image-full-index
+		#banner .image-full
 		{
 			margin: 0;
 		}
