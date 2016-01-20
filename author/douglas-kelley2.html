@@ -85,91 +85,99 @@
                             <hr>
                         </header>
                         <a href="http://douglask3.github.io/pages/research-interests.html" class="image image-full"><img src="http://douglask3.github.io/images/TreeProtractor.png"/></a>
+
+                        {% for page in hidden_pages %}
+                            {{page.title}}
+                        {% end for %}
                     </section>
                 </div>
-                <div class="12u", style = "padding-bottom:0.67em;">
-                    <section class="box">
-                        <hr>
-                            <h2> Publication News </h2>
-                        <hr>
-                        <a href="http://douglask3.github.io/pages/research-interests.html" class="image image-full"><img src="http://douglask3.github.io/images/TreeProtractor.png"/></a>
-                    </section>
-                </div>
-                <div class="6u", style = "padding-right:0.25em;">
-                    <footer class="index">
-                        <a href="http://douglask3.github.io/pages/cv.html" class="button-Index button-icon-1"> Curriculum Vitae</a>
-                    </footer>
-                </div>
-                <div class="6u", style = "padding-left:0.25em;">
-                <footer class="index">
-                    <a href="http://douglask3.github.io/pages/tools.html" class="button-Index button-icon-1"> Tools & Code</a>
-                </footer>
-                </div>
-            </section>
-        </div>
-    <!-- Excerise -->
-        <div class="4u", style = "padding:1em;">
-            <section class="box">
-                <header>
-                    <hr>
-                        <h2>Exercise</h2>
-                    <hr>
-                </header>
-                <a href="http://douglask3.github.io/pages/running.html" class="image image-full"><img src="http://douglask3.github.io/images/Running.jpg"/></a>
-                <footer class="actions">
-                    <a href=" " class="button button-icon button-icon-1">Continue Reading</a>
-                </footer>
-            </section>
-        <!-- Exercise Sub-section -->
-            <section>
-                <div class="6u", style = "padding-right:0.25em;">
-                    <section class="box">
-                        <a href="http://douglask3.github.io/pages/running.html" class="image image-full"><img src="http://douglask3.github.io/images/NewarkHalfCropped.jpg"/></a>
-                            <hr>
-                                <h2> Running & Racing <h2>
-                            <hr>
-                    </section>
-                </div>
-                <div class="6u", style = "padding-left:0.25em; padding-bottom:0.33em;">
-                    <section class="box">
-                        Training
-                    </section>
-                </div>
-                <div class="6u", style = "padding-left:0.25em; padding-top:0.33em;">
-                    <section class="box">
-                        Run/Hike/Bike Routes
-                    </section>
-                </div>
-            </section>
-        </div>
-    <!-- Fun -->
-        <div class="4u", style = "padding:1em;">
-            <section class="box">
-                <header>
-                    <hr>
-                    <h2>Fun</h2>
-                    <hr>
-                </header>
-                <a href="http://douglask3.github.io/pages/rest.html" class="image image-full"><img src="http://douglask3.github.io/images/Upper_Eskdale.jpg"/></a>
-                <footer class="actions">
-                    <a href=" " class="button button-icon button-icon-1">Continue Reading</a>
-                </footer>
-            </section>
-        <!--Fun sub-section -->
-            <section>
-                <div class="6u", style = "padding-right:0.25em;">
-                    <section class="box">
-                        Photography
-                    </section>
-                </div>
-                <div class="6u", style = "padding-left:0.25em">
-                    <section class="box">
-                        Crafts
-                    </section>
-                </div>
-            </section>
-        </div>
-    </section>
+
+<div class="highlight"><pre>            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;12u&quot;</span><span class="err">,</span> <span class="na">style =</span> <span class="s">&quot;padding-bottom:0.67em;&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">&quot;box&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;hr&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span> Publication News <span class="nt">&lt;/h2&gt;</span>
+                    <span class="nt">&lt;hr&gt;</span>
+                    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;{filename}/pages/research.md&quot;</span> <span class="na">class=</span><span class="s">&quot;image image-full&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;{filename}/images/TreeProtractor.png&quot;</span><span class="nt">/&gt;&lt;/a&gt;</span>
+                <span class="nt">&lt;/section&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;6u&quot;</span><span class="err">,</span> <span class="na">style =</span> <span class="s">&quot;padding-right:0.25em;&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">&quot;index&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://douglask3.github.io/pages/cv.html&quot;</span> <span class="na">class=</span><span class="s">&quot;button-Index button-icon-1&quot;</span><span class="nt">&gt;</span> Curriculum Vitae<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/footer&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;6u&quot;</span><span class="err">,</span> <span class="na">style =</span> <span class="s">&quot;padding-left:0.25em;&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">&quot;index&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://douglask3.github.io/pages/tools.html&quot;</span> <span class="na">class=</span><span class="s">&quot;button-Index button-icon-1&quot;</span><span class="nt">&gt;</span> Tools <span class="err">&amp;</span> Code<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/footer&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/section&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="c">&lt;!-- Excerise --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;4u&quot;</span><span class="err">,</span> <span class="na">style =</span> <span class="s">&quot;padding:1em;&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">&quot;box&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;header&gt;</span>
+                <span class="nt">&lt;hr&gt;</span>
+                    <span class="nt">&lt;h2&gt;</span>Exercise<span class="nt">&lt;/h2&gt;</span>
+                <span class="nt">&lt;hr&gt;</span>
+            <span class="nt">&lt;/header&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;{filename}/pages/running.md&quot;</span> <span class="na">class=</span><span class="s">&quot;image image-full&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;{filename}/images/Running.jpg&quot;</span><span class="nt">/&gt;&lt;/a&gt;</span>
+            <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">&quot;actions&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot; &quot;</span> <span class="na">class=</span><span class="s">&quot;button button-icon button-icon-1&quot;</span><span class="nt">&gt;</span>Continue Reading<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/footer&gt;</span>
+        <span class="nt">&lt;/section&gt;</span>
+    <span class="c">&lt;!-- Exercise Sub-section --&gt;</span>
+        <span class="nt">&lt;section&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;6u&quot;</span><span class="err">,</span> <span class="na">style =</span> <span class="s">&quot;padding-right:0.25em;&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">&quot;box&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;{filename}/pages/running.md&quot;</span> <span class="na">class=</span><span class="s">&quot;image image-full&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;{filename}/images/NewarkHalfCropped.jpg&quot;</span><span class="nt">/&gt;&lt;/a&gt;</span>
+                        <span class="nt">&lt;hr&gt;</span>
+                            <span class="nt">&lt;h2&gt;</span> Running <span class="err">&amp;</span> Racing <span class="nt">&lt;h2&gt;</span>
+                        <span class="nt">&lt;hr&gt;</span>
+                <span class="nt">&lt;/section&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;6u&quot;</span><span class="err">,</span> <span class="na">style =</span> <span class="s">&quot;padding-left:0.25em; padding-bottom:0.33em;&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">&quot;box&quot;</span><span class="nt">&gt;</span>
+                    Training
+                <span class="nt">&lt;/section&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;6u&quot;</span><span class="err">,</span> <span class="na">style =</span> <span class="s">&quot;padding-left:0.25em; padding-top:0.33em;&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">&quot;box&quot;</span><span class="nt">&gt;</span>
+                    Run/Hike/Bike Routes
+                <span class="nt">&lt;/section&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/section&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="c">&lt;!-- Fun --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;4u&quot;</span><span class="err">,</span> <span class="na">style =</span> <span class="s">&quot;padding:1em;&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">&quot;box&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;header&gt;</span>
+                <span class="nt">&lt;hr&gt;</span>
+                <span class="nt">&lt;h2&gt;</span>Fun<span class="nt">&lt;/h2&gt;</span>
+                <span class="nt">&lt;hr&gt;</span>
+            <span class="nt">&lt;/header&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;{filename}/pages/rest.md&quot;</span> <span class="na">class=</span><span class="s">&quot;image image-full&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;{filename}/images/Upper_Eskdale.jpg&quot;</span><span class="nt">/&gt;&lt;/a&gt;</span>
+            <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">&quot;actions&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot; &quot;</span> <span class="na">class=</span><span class="s">&quot;button button-icon button-icon-1&quot;</span><span class="nt">&gt;</span>Continue Reading<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/footer&gt;</span>
+        <span class="nt">&lt;/section&gt;</span>
+    <span class="c">&lt;!--Fun sub-section --&gt;</span>
+        <span class="nt">&lt;section&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;6u&quot;</span><span class="err">,</span> <span class="na">style =</span> <span class="s">&quot;padding-right:0.25em;&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">&quot;box&quot;</span><span class="nt">&gt;</span>
+                    Photography
+                <span class="nt">&lt;/section&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;6u&quot;</span><span class="err">,</span> <span class="na">style =</span> <span class="s">&quot;padding-left:0.25em&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">&quot;box&quot;</span><span class="nt">&gt;</span>
+                    Crafts
+                <span class="nt">&lt;/section&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/section&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</pre></div>
+
+
 </div>
     </div>
 </div>
