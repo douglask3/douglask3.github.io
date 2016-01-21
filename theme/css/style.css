@@ -171,6 +171,7 @@
 
 		.actions
 		{
+			position: absolute;
 			bottom : 0;
 		}
 
