@@ -171,8 +171,8 @@
 
 		.actions
 		{
-			position: absolute;
-			bottom : 0;
+			position: relative;
+			bottom : 0px;
 		}
 
 	/* Box */
