@@ -171,6 +171,7 @@
 
 		.actions
 		{
+			bottom : 0;
 		}
 
 	/* Box */
@@ -751,7 +752,6 @@
 	#footer-wrapper
 	{
 		position: relative;
-		bottom : 0;
 		color: #858484;
 	}
 
