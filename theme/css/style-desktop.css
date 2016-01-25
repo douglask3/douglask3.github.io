@@ -86,6 +86,7 @@
 		.button-alt {
 			font-size: 0.8em;
 			padding: 0.4em 0.8em 0.4em 0.6em;
+			border: 0.3em;
 		}
 
 		.button-Index { width: 100%; }
