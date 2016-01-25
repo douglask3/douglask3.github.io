@@ -83,6 +83,11 @@
 			padding: 0.65em 1.5em 0.65em 1.5em;
 		}
 
+		.button-alt {
+			font-size: 0.8em;
+			padding: 0.4em 0.8em 0.4em 0.6em;
+		}
+
 		.button-Index { width: 100%; }
 
 			.button-big
