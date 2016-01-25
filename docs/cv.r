@@ -46,4 +46,4 @@ command = paste('./../markdown-resume/bin/md2resume html', fileTemp, fileHtmlOut
 system(command)
 
 command = paste('./../markdown-resume/bin/md2resume pdf', fileTemp, filePdfOut)
-system(command)
+#system(command)
