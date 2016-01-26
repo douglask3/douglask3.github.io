@@ -78,48 +78,62 @@
 								<hr class="title2">
 								<h2>Vegetation model inter-comparison benchmarking</h2>
 								<hr class="title2">
-								<p>The “Land surface Processes and eXchanges” (LPX: <a href="http://douglask3.github.io/lpx-mv1.html">Kelley et al., 2014</a>; <a href="http://douglask3.github.io/lpx.html">Prentice et al., 2011</a>) is a coupled process-vegetation model derived from the LPJ Dynamic Global Vegetation Model family (LPJ-DGVM: <a href="http://onlinelibrary.wiley.com/doi/10.1046/j.1365-2486.2003.00569.x/abstract">Sitch et al., 2003</a>). The model describes dynamical vegetation and terrestrial biogeochemical processes, and how these processes interct with climate to control wildfire disturbance. The model has been developed and benchmarked for Australian fire regimes and fire adapted vegetation <a href="http://douglask3.github.io/lpx-mv1.html">Kelley et al., 2014</a> - incorporating vegetative resistance and reliance adaptations common to Australia but important for the rest of the world - evolutionary adaptive bark protection and post-fire resprouting. The next stage of model development will focus on improving the simulation of fire dynamics for the rest of the world.</p>
+								<p>This benhcmarking system provides a way of qualitaivly asessing model vegetation model performance and comparing different vegetation models across a variety of vegetation and land surface processes. Model performance scores are easy to understand and comparisons against the systems 'null models' helps interpret score quality. The system is easily adpated to included new benchmark datasets and assessment of new process.</p>
+<p>Vegetation processes currently included in the system:</p>
+<ul>
+<li>net and gross primary production</li>
+<li>seasonal net ecosystem production</li>
+<li>vegetation cover and composition</li>
+<li>vegetation height</li>
+<li>spatial, seasonal and inter-annual fractional absorbed radiation</li>
+</ul>
+<p>Land surface processes included:</p>
+<ul>
+<li>
+<p>Multiple fire observations:</p>
+<ul>
+<li>Two global fire datasets</li>
+<li>Two Australia fire datasets</li>
+<li>Burnt area</li>
+<li>Fire Season timing and length</li>
+<li>Inter-annual variation in fire</li>
+</ul>
+</li>
+<li>
+<p>Inter-annual variations in river basin discharge.</p>
+</li>
+</ul>
 <div class="12u">
     <section>
-    <!-- LPX code  -->
-        <div class="4u", style = "padding:1em;">
+    <!-- Benchmark Metrics -->
+        <div class="6u", style = "padding:1em;">
             <section class="box">
                 <header>
                     <hr>
-                    <h2>LPX model code</h2>
+                    <h2>Benchmark metrics</h2>
                     <hr>
                 </header>
-                LPX model code is hosted on bitbucket using git version control. For access, please <a href="#contact">email</a>.
+                An R-package containing the metrics and null models. To install, you first need to install and open the <a href="https://cran.r-project.org/web/packages/devtools/README.html" target="_blank"> devtools package </a>, which is easily done from <a href="https://cran.r-project.org"_blank"> CRAN. Then run
+                <br>
+                install_github("douglask3/benchmarkmetrics/benchmarkmetrics")
+                <br>
+                <a href="douglask3.github.io/docs/benchmarkMetrics-manual Click here" target="_blank"> for documentation
                 <footer class="actions">
-                    <a href="https://bitbucket.org/teambcd/lpx" class="button button-icon button-icon-1" target="_blank">See repository</a>
+                    <a href="https://github.com/douglask3/benchmarkmetrics/tree/master/benchmarkMetrics" class="button button-icon button-icon-1" target="_blank">See repository</a>
                 </footer>
             </section>
         </div>
     <!-- LPX Benchmarking -->
-        <div class="4u", style = "padding:1em;">
+        <div class="6u", style = "padding:1em;">
             <section class="box">
                 <header>
                     <hr>
-                    <h2>Benchmarking system</h2>
+                    <h2><LPX Benchmarking system</h2>
                     <hr>
                 </header>
-                The LPX benchmarking system links LPX converted outputs to the <a href="https://github.com/douglask3/benchmarkmetrics" target="_blank">vegetation model</a> benchmarking system]. This is hosted on bitbucket and is openly available, but is new so <a href="#contact">email me</a> if you have any problems.
+                The LPX benchmarking system links LPX converted outputs to the <a href="https://github.com/douglask3/benchmarkmetrics" target="_blank">vegetation model</a> benchmarking system. This should also be compatatble to other vegetation models so long as the model outputs are in ncdf format, with one variable each file and with each layer representing a time step. This is hosted on bitbucket and is openly available, but is new so <a href="#contact">email me</a> if you have any problems.
                 <footer class="actions">
                     <a href="https://bitbucket.org/douglask3/lpxbenchmarking" class="button button-icon button-icon-1" target="_blank">See repository</a>
-                </footer>
-            </section>
-        </div>
-    <!-- LPX all in one -->
-        <div class="4u", style = "padding:1em;">
-            <section class="box">
-                <header>
-                    <hr>
-                    <h2>All in one model run and benchmarking</h2>
-                    <hr>
-                </header>
-                This will be the ultimate all-in-one download and benchmark LPX system when finished. But is still under development. Give it a go though, it might work. For now, you will still need to <a href="#contact">contact me</a> for access
-                <footer class="actions">
-                    <a href="https://bitbucket.org/douglask3/lpxcheckoutlibs" class="button button-icon button-icon-1" target="_blank">See repository</a>
                 </footer>
             </section>
         </div>
