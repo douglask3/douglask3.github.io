@@ -47,8 +47,8 @@ p {
 
 
 #cv {
-	width: 100%;
-	max-width: 2000px;
+	width: 95%;
+	max-width: 1000px;
 	background: #f3f3f3;
 	margin: 30px auto;
 }
@@ -188,7 +188,7 @@ section:last-child {
 	margin-bottom: 3px;
 }
 
-@media all and (min-width: 602px) and (max-width: 800px) {
+@media all and (min-width: 102px) and (max-width: 100px) {
 	#headshot {
 		display: none;
 	}
