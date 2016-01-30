@@ -188,7 +188,7 @@ section:last-child {
 	margin-bottom: 3px;
 }
 
-@media all and (min-width: 102px) and (max-width: 800px) {
+@media all and (min-width: 102px) and (max-width: 600px) {
 	#headshot {
 		display: none;
 	}
