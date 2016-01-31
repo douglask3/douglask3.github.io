@@ -1,10 +1,27 @@
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video, left, centre, right {
 border:0;
 font:inherit;
 font-size:100%;
 margin:0;
 padding:0;
 vertical-align:baseline;
+}
+
+left {
+    position: absolute;
+    left: 50px;
+    width: 150px;
+}
+
+center {
+    margin: auto;
+    width: 60%;
+}
+
+right {
+    position: absolute;
+    left: 230mm;
+    width: 300px;
 }
 
 b {
@@ -48,9 +65,19 @@ p {
 
 #cv {
 	width: 90%;
-	max-width: 1000px;
+	max-width: 950px;
 	background: #f3f3f3;
 	margin: 30px auto;
+}
+
+#cv-print {
+	width: 285mm;
+	height: 405mm;
+	background: #f3f3f3;
+	margin-top: 10mm;
+	margin-left: 10mm;
+	margin-right: 10mm;
+	margin-bottom: 0;
 }
 
 .mainDetails {
@@ -82,6 +109,19 @@ p {
 
 #mainArea {
 	padding: 0 40px;
+}
+
+#mainFoot {
+	height: 10mm;
+		width: 285mm;
+	background: #f3f3f3;
+	padding: 0;
+
+
+	margin-top: 0;
+	margin-left: 10mm;
+	margin-right: 10mm;
+	margin-bottom: 10mm;
 }
 
 #headshot {
@@ -168,10 +208,15 @@ section:last-child {
 	color: #840;
 }
 
-.subDetails {
+.subDetails, .subDetailsPage {
 	font-size: 0.8em;
 	font-style: italic;
 	margin-bottom: 3px;
+}
+
+.subDetailsPage {
+	margin-bottom:0;
+	line-height: 0.0em;
 }
 
 .keySkills {
