@@ -7,6 +7,20 @@ padding:0;
 vertical-align:baseline;
 }
 
+sup {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+sub {
+    vertical-align: sub;
+    font-size: smaller;
+}
+
+table {
+
+}
+
 left {
     position: absolute;
     left: 50px;
@@ -47,11 +61,6 @@ li {
 	text-indent: -1em;
 }
 
-ul-2Col {
-  columns: 2;
-  -webkit-columns: 2;
-  -moz-columns: 2;
-}
 
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 display:block;
@@ -247,7 +256,7 @@ section:last-child {
 	margin-bottom: 3px;
 }
 
-@media all and (min-width: 602px) and (max-width: 800px) {
+@media all and (min-width: 602px) and (max-width: 700px) {
 	#headshot {
 		display: none;
 	}
