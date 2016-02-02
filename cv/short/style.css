@@ -47,6 +47,12 @@ li {
 	text-indent: -1em;
 }
 
+ul-2Col {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 display:block;
 }
@@ -189,9 +195,17 @@ section:last-child {
 	width: 25%;
 }
 
+.sectionTitlePdf {
+	width: 18%
+}
+
 .sectionContent {
 	float: right;
 	width: 72.5%;
+}
+.sectionContentPdf {
+	width: 77%;
+	margin-right: 2.5%;
 }
 
 .sectionTitle h1 {
