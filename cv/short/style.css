@@ -68,6 +68,8 @@ display:block;
 
 html, body {background: #181818; font-family: 'Lato', helvetica, arial, sans-serif; font-size: 16px; color: #222;}
 
+.bodyPDF {background: #bbf;}
+
 .clear {clear: both;}
 
 p {
@@ -83,6 +85,16 @@ p {
 	max-width: 950px;
 	background: #f3f3f3;
 	margin: 30px auto;
+}
+
+#cv-print {
+	width: 288mm;
+	background: #f3f3f3;
+	height: 405mm;
+	margin-top: 10mm;
+	margin-left: 10mm;
+	margin-right: 10mm;
+	margin-bottom: 0;
 }
 
 .mainDetails {
@@ -194,10 +206,17 @@ section:last-child {
 	width: 25%;
 }
 
+.sectionTitlePdf {
+	width: 18%
+}
 
 .sectionContent {
 	float: right;
 	width: 72.5%;
+}
+.sectionContentPdf {
+	width: 77%;
+	margin-right: 2.5%;
 }
 
 .sectionTitle h1 {
@@ -239,6 +258,146 @@ section:last-child {
 	margin-bottom: 3px;
 }
 
+@media all and (min-width: 602px) and (max-width: 700px) {
+	#headshot {
+		display: none;
+	}
+
+	.keySkills {
+	-moz-column-count:2;
+	-webkit-column-count:2;
+	column-count:2;
+	}
+}
+
+@media all and (max-width: 601px) {
+	#cv {
+		width: 95%;
+		margin: 10px auto;
+		min-width: 280px;
+	}
+
+	#headshot {
+		display: none;
+	}
+
+	#name, #contactDetails {
+		float: none;
+		width: 100%;
+		text-align: center;
+	}
+
+	.sectionTitle, .sectionContent {
+		float: none;
+		width: 100%;
+	}
+
+	.sectionTitle {
+		margin-left: -2px;
+		font-size: 1.25em;
+	}
+
+	.keySkills {
+		-moz-column-count:2;
+		-webkit-column-count:2;
+		column-count:2;
+	}
+}
+
+@media all and (max-width: 480px) {
+	.mainDetails {
+		padding: 15px 15px;
+	}
+
+	section {
+		padding: 15px 0 0;
+	}
+
+	#mainArea {
+		padding: 0 25px;
+	}
+
+
+	.keySkills {
+	-moz-column-count:1;
+	-webkit-column-count:1;
+	column-count:1;
+	}
+
+	#name h1 {
+		line-height: .8em;
+		margin-bottom: 4px;
+	}
+}
+
+@media print {
+    #cv {
+        width: 100%;
+    }
+}
+
+@-webkit-keyframes reset {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	40% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes reset {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@-moz-keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	40% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes reset {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	40% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
 
 .instaFade {
     -webkit-animation-name: reset, fade-in;
