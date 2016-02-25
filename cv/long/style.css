@@ -7,6 +7,8 @@ padding:0;
 vertical-align:baseline;
 }
 
+
+
 sup {
     vertical-align: super;
     font-size: smaller;
@@ -216,6 +218,10 @@ section:last-child {
 	font-size: 1.5em;
 	margin-bottom: -2px;
 	color: #840;
+}
+
+.letterContent {
+    font-size: 133%
 }
 
 .subDetails, .subDetailsPage {
