@@ -80,7 +80,58 @@
 								<div class="pennant pennant-alt date">2000-01-02</div>
 								
 								<h1>gitProjectExtras</h1>
-<p>More info coming soon</p>
+<h2>gitBasedProjects - for R</h2>
+<p>Provides extra functions for integrating R with git tracked projects. Allows linking code and outputs with information about git revision numbers and remote location. Also contains tools for setting up a project structure when freshly cloned. Feel free to clone and contribute to the package:</p>
+<div class="highlight"><pre>git clone https://github.com/douglask3/gitProjectExtras
+</pre></div>
+
+
+<h3>Install and use</h3>
+<p>To insatll the package, first make sure you have R/Rstudio running and you have installed and loaded devtools:</p>
+<div class="highlight"><pre>install.packages(&#39;devtools&#39;)
+library(devtools)
+</pre></div>
+
+
+<p>Then run the following command to install and load Benchmark Metrics:</p>
+<div class="highlight"><pre>install_github(&#39;douglask3/gitProjectExtras/gitBasedProjects&#39;)
+library(gitBasedProjects)
+</pre></div>
+
+
+<p>To see help files and examples of how to use:</p>
+<div class="highlight"><pre>?gitBasedProjects
+</pre></div>
+
+
+<h3>Main function</h3>
+<h4>Current git revision number</h4>
+<p><code>gitVersionNumber()</code> will return the current version number see <code>?gitVersionNumber</code> for more options.</p>
+<h4>Project URL</h4>
+<p>If you git based project is stored on a site such as github or bitbucket, <code>gitRemoteURL()</code> will return the sites URL. number see <code>?gitRemoteURL</code> for more options.</p>
+<h4>In line git calls from R</h4>
+<p>Most (and soon all) the command line git calls are avaiable within R. For example, <code>git.status()</code> is equivalent to the command line call <code>git status</code>. Files can be added and commited using:</p>
+<div class="highlight"><pre>git.add(c(&#39;file1&#39;, &#39;file2&#39;, ...))
+git.commit(&quot;message&quot;)
+</pre></div>
+
+
+<p>or even:</p>
+<div class="highlight"><pre>git.addCommit(c(&#39;file1&#39;, &#39;file2&#39;, ....), &quot;message&quot;)
+</pre></div>
+
+
+<p>which is equivalent to the following inc ommand line:</p>
+<div class="highlight"><pre>git add file1 file2 ...
+git commit -m &quot;message&quot;
+</pre></div>
+
+
+<p>see <code>?git</code> for more commands and options.</p>
+<h2>More Info</h2>
+<p><a href="http://douglask3.github.io/docs/gitProjectExtras-manual.pdf">click here</a> for documentation.</p>
+<h1>Contact details</h1>
+<p><a href="mailto:douglas.i.kelley@gmail.com">Douglas Kelley</a></p>
 							</article>
 					</div>
 				</div>
