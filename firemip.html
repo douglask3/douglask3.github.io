@@ -84,7 +84,7 @@
 
 										<p>Infomation on benchmarking models participating in the fire Model Inter-comparison Project (fireMIP).</p>
 										<hr class="title2">
-									<p>Please note this project is still under development.</p>
+									<p>Note this project is still under development.</p>
 <hr>
 
 <h2>Project Repo</h2>
@@ -103,17 +103,56 @@
 <h2>Benchmark data</h2>
 <hr>
 
-<p>Benchmark data is on the fireMIP server. Contact <a href="http://www.imk-ifu.kit.edu/staff_2107.php">Stijn Hantson</a> for info</p>
+<p>Benchmark data is on the fireMIP server. Contact <a href="http://www.imk-ifu.kit.edu/staff_2107.php">Stijn Hantson</a> for info. Each model should be stored in the following way:</p>
+<div class="highlight"><pre>&lt;&lt;NAME&gt;&gt;/&lt;&lt;EXP&gt;&gt;/&lt;&lt;OUTPUTS&gt;&gt;
+</pre></div>
+
+
+<p>Where:</p>
+<ul>
+<li>NAME is a unique name for the model. It doesn't not have to be the actual model name, but can be for example an abbriviation. So long as no other model shares that name</li>
+<li>EXP is the experiment (i.e "SF1")</li>
+<li>OUTPUTS: all the model outputs. These should be netcdf files. The can be individually zipped with gzip. And they are allowed to be in different directories.</li>
+</ul>
 <hr>
 
 <h2>Configuring</h2>
 <hr>
 
+<p>There are several points in the 'cfg.r' where you can set the comparisons to be made, add new models, add extra observatioanl comparisons, and define which models and comparisons are to be made</p>
+<h3>Set Parameters</h3>
+<p>Here, you can set the following parameter:</p>
+<div class="highlight"><pre>experiment   = &#39;SF1&#39;
+</pre></div>
+
+
+<p>Sets the experiment directory. Here, its set to SF1</p>
+<div class="highlight"><pre>mask_type    = &#39;common&#39;
+</pre></div>
+
+
+<p>What mask to apply to the spatial comparisons. The options are still comoing online, but will include:</p>
+<ul>
+<li>'common': Compares areas of where observations and all models have data</li>
+<li>'commonHi': All models are resampled to the highest resolution of models and data (typically 0.5 degree) before applying the common grid</li>
+<li>'commonLw': All models are resampled to the lowest resolution of models and data before applying the common grid</li>
+<li>'Observations': models resampled to observations grid and compare for common grid between observation and model on a model by model basis</li>
+<li>'Modelled':  observations resampled to model grid and compare for common grid between observation and model on a model by model basis.</li>
+</ul>
+<h3>Paths</h3>
+<p>More info coming soon</p>
+<h3>Model Information</h3>
+<p>More info coming soon</p>
+<h3>Comparison Info</h3>
+<p>More info coming soon</p>
+<h3>Model and Comparison selection</h3>
+<p>More info coming soon</p>
 <hr>
 
 <h2>Participating Models</h2>
 <hr>
 
+<p>More Info coming soon</p>
 <hr>
 
 <h2>Packages Used</h2>
@@ -121,8 +160,8 @@
 
 <p>Packages are downloaded by running initalise.r <code>./initalise.r</code> in command line and <code>source("initalise.r")</code> from within R.</p>
 <h3>benchmarkmetrics</h3>
-<p>The actual metrics used are in an R-package. This is</p>
-<p>To use in you won project</p>
+<p>The actual metrics used are in an R-package, and are sourced and called by this project.</p>
+<p>To use in this package separately in you own project</p>
 <div class="highlight"><pre>install.packages(&#39;devtools&#39;)
 library(devtools)
 install_github(&#39;douglask3/benchmarkmetrics/benchmarkMetrics&#39;)
@@ -130,11 +169,22 @@ library(benchmarkMetrics)
 </pre></div>
 
 
+<p>For info on how to use this package:</p>
+<div class="highlight"><pre>?benchmarkMetrics
+</pre></div>
+
+
 <p><a href="https://github.com/douglask3/benchmarkmetrics">Click here</a> for more info.</p>
 <h3>TM2r</h3>
 <p>This package will be used to calculate atmospheric seasonal concentrations of CO<sub>2</sub> from model outputs of fluxes from Net Primary Production, hetrotrophic respiration, and fire. <a href="https://github.com/douglask3/tm2R">Click here</a> for code development. More info comign soon.</p>
 <h3>gitBasedProjects</h3>
-<p>gitBasedProjects is used to track</p>
+<p>gitBasedProjects is used to link comparison outputs to a specific point in the projects development, and to specific configurations the model will be run in. This is done by adding the git version number, url, dat and time to:</p>
+<ul>
+<li>figures, as a watermark</li>
+<li>netcdf outputs and tempary files, as attributes</li>
+<li>csv tables, as footers.</li>
+</ul>
+<p>To use in this package separately in you own project</p>
 <div class="highlight"><pre>install.packages(&#39;devtools&#39;)
 library(devtools)
 install_github(&#39;douglask3/gitProjectExtras/gitBasedProjects&#39;)
@@ -142,8 +192,15 @@ library(gitBasedProjects)
 </pre></div>
 
 
+<p>For info on how to use this package:</p>
+<div class="highlight"><pre>?gitBasedProjects
+</pre></div>
+
+
 <p><a href="https://github.com/douglask3/gitProjectExtras">Click here</a> for more info.</p>
 <h3>Extra raster functions.</h3>
+<p>More info coming soon.</p>
+<p>Andy questions, <a href="#contact">contact me</a></p>
 								</article>
 						</div>
 					</div>
