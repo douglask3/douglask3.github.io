@@ -104,12 +104,13 @@
 <hr>
 
 <p>Benchmark data is on the fireMIP server. Contact <a href="http://www.imk-ifu.kit.edu/staff_2107.php">Stijn Hantson</a> for info. Each model should be stored in the following way:</p>
-<div class="highlight"><pre>&lt;&lt;NAME&gt;&gt;/&lt;&lt;EXP&gt;&gt;/&lt;&lt;OUTPUTS&gt;&gt;
+<div class="highlight"><pre>&lt;&lt;PATH&gt;&gt;/&lt;&lt;NAME&gt;&gt;/&lt;&lt;EXP&gt;&gt;/&lt;&lt;OUTPUTS&gt;&gt;
 </pre></div>
 
 
 <p>Where:</p>
 <ul>
+<li>PATH is a common path to all models, which must be defined in the cfg file as <code>outputs_dir.BenchmarkData</code></li>
 <li>NAME is a unique name for the model. It doesn't not have to be the actual model name, but can be for example an abbriviation. So long as no other model shares that name</li>
 <li>EXP is the experiment (i.e "SF1")</li>
 <li>OUTPUTS: all the model outputs. These should be netcdf files. The can be individually zipped with gzip. And they are allowed to be in different directories.</li>
@@ -144,15 +145,98 @@
 <h3>Paths</h3>
 <hr>
 
-<p>More info coming soon</p>
+<div class="highlight"><pre>data_dir.ModelOuutputs = &#39;data/ModelOutputs/&#39;
+</pre></div>
+
+
+<p>The path to model output data (&lt;<PATH>&gt; in model data section)</p>
+<div class="highlight"><pre>data_dir.BenchmarkData = &#39;data/BenchData/&#39;
+</pre></div>
+
+
+<p>The path to the benchmark datasets</p>
+<div class="highlight"><pre>outputs_dir.modelMasks = outputs/Masks&#39;
+</pre></div>
+
+
+<p>The path and start of pattern of the mask from model and observations, to be applied before metric comparison.</p>
 <h3>Model Information</h3>
 <hr>
 
-<p>More info coming soon</p>
+<p><strong>Model.RAW</strong> lists information about the model outputs and how ethy should be processed.
+Each model forms an item in a list, and each item has three entires:</p>
+<ul>
+<li><em>Directory name</em>, or &lt;<NAME>&gt; in model data section</li>
+<li><em>Processing function</em>, the function used to process the particular model.
+  Most models will get away with <code>process.default</code>. If a new model needs a new
+  function, this can be defined in a separate file and placed in 'libs' dir or its
+  sub-directories, and it will be automatically sourced when the system is run</li>
+<li><em>Start date</em>, in decimal years - the timing of the first day of the models run.</li>
+</ul>
+<p>For example</p>
+<div class="highlight"><pre>Model.RAW = list(
+                CLM  = c(&#39;CLM&#39; , process.CLM , 1996),
+                CTEM = c(&#39;CTEM&#39;, process.CTEM, 1859))
+</pre></div>
+
+
+<p><strong>Model.Variable</strong> Description soon
+For example</p>
+<div class="highlight"><pre>Model.Variable = list( #Line 1  variable name; Line 2  scaling; Line 3 - timestep
+    varname  = rbind(c(&quot;BurntArea&quot;, &quot;gpp&quot;    , &quot;ModelMask&quot;),
+                     c(100        , 1/1000   , 1          ),
+                     c(&#39;Monthly&#39;  , &#39;Annual&#39; , &quot;Monthly&quot;  ),
+                     c(&#39;mean&#39;     , &#39;sum&#39;    , &quot;sum&quot;      )),
+    CLM      = rbind(c(&quot;BAF&quot;      , &quot;gpp&quot;    , &quot;cSoilt&quot;   ),
+                     c(100        , 1        , 1          ),
+                     c(&#39;Daily&#39;    , &#39;Monthly&#39;, &quot;Monthly&quot;  )),
+    CTEM     = rbind(c(&quot;burntArea&quot;, &quot;gpp&quot;    , &quot;cSoil&quot;    ),
+                     c(100        , 1        , 1          ),
+                     c(&#39;Monthly&#39;  , &#39;Daily&#39;  , &quot;Monthly&quot;  )))
+</pre></div>
+
+
+<p><strong>Model.plotting</strong> Description soon
+For example</p>
+<div class="highlight"><pre>Model.plotting = rbind(#Title  #Colour
+              CLM  = c(&#39;CLM&#39; , &#39;red&#39;     ),
+              CTEM = c(&#39;CTEM&#39;, &#39;green&#39;   ))
+</pre></div>
+
+
 <h3>Comparison Info</h3>
 <hr>
 
-<p>More info coming soon</p>
+<p>Infomrmation for comparisons are in a list per comparison. There a number of common
+items each list must contain, along with some extra items specific to the
+comparison type:</p>
+<ul>
+<li><em>ObsFile</em> is the filename, relative to <code>data_dir.BenchmarkData</code> that the
+  observation is contained in</li>
+<li>
+<p><em>ComparisonFun</em> the function which will be used to make the comparison.
+   Available functions include:</p>
+</li>
+<li>
+<p>FullNME, ...</p>
+</li>
+<li>Others listed soon</li>
+</ul>
+<h4>Spatial</h4>
+<p>Spatial comparisons can be an NME comparisons of Annual Average or itemized MM comparisons.</p>
+<p><em>For NME</em></p>
+<p>BurntArea.Spacial = list(obsFile       = "Fire_GFEDv4_Burnt_fraction_0.5grid9.nc",
+                           obsVarname    = "mfire_frac",
+                           obsLayers     = 8:127,
+                           obsStart      = 1996,
+                           ComparisonFun = FullNME,
+                           plotArgs      = plotArgs)</p>
+<p>where <code>plotArgs</code> are defined as:</p>
+<p>BurntArea.Spacial = list(cols    = c('white', "#EE8811", "#FF0000", "#110000"),
+                           dcols   = c('#0000AA', '#2093FF', '#C0D0FF','white',
+                                          '#FFD793', "#F07700", "#AA0000"),
+                           limits  = c(0.001,.01,.02,.05,.1,.2),
+                           dlimits = c(-0.2,-0.1,-0.5,-0.01,0.01,0.05,0.1, 0.2))</p>
 <h3>Model and Comparison selection</h3>
 <hr>
 
@@ -190,7 +274,7 @@ library(benchmarkMetrics)
 <h3>TM2r</h3>
 <hr>
 
-<p>This package will be used to calculate atmospheric seasonal concentrations of CO<sub>2</sub> from model outputs of fluxes from Net Primary Production, hetrotrophic respiration, and fire. <a href="https://github.com/douglask3/tm2R">Click here</a> for code development. More info comign soon.</p>
+<p>This package will be used to calculate atmospheric seasonal concentrations of CO<sub>2</sub> from model outputs of fluxes from Net Primary Production, hetrotrophic respiration, and fire. <a href="https://github.com/douglask3/tm2R">Click here</a> for code development. More info coming soon.</p>
 <h3>gitBasedProjects</h3>
 <hr>
 
