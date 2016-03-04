@@ -892,3 +892,7 @@ article em {
 	width: 100%;
 }
 </style>
+
+code {
+    font-family: monospace;
+}
