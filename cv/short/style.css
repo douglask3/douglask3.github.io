@@ -11,12 +11,12 @@ vertical-align:baseline;
 
 sup {
     vertical-align: super;
-    font-size: smaller;
+    font-size: 60%;
 }
 
 sub {
     vertical-align: sub;
-    font-size: smaller;
+    font-size: 60%;
 }
 
 table {
@@ -45,7 +45,7 @@ b {
 }
 
 small {
-	font-size:80%;
+	font-size:85%;
 }
 
 a {
