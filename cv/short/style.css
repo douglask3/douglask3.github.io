@@ -200,17 +200,17 @@ section:last-child {
 	width: 25%;
 }
 
-
-.sectionContent {
-	float: right;
-	width: 72.5%;
-}
-
 .sectionTitle h1 {
 	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
 	font-style: italic;
 	font-size: 1.5em;
 	color: #cf8a05;
+}
+
+
+.sectionContent {
+	float: right;
+	width: 72.5%;
 }
 
 .sectionContent h2 {
